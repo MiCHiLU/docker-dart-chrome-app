@@ -1,0 +1,11 @@
+[Unit]
+Description=Virtual Framebuffer X server for X Version 11
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/sysconfig/Xvfb
+ExecStart=/usr/bin/Xvfb ${OPTION}
+ExecReload=/bin/kill -HUP ${MAINPID}
+
+[Install]
+WantedBy=multi-user.target
